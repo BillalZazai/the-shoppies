@@ -6,7 +6,7 @@ import {Nominations} from "../Nominations";
 
 export const TabBar = () => {
   return (
-        <Tabs  variant="pills" defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tabs  variant="pills" defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="Home">
             <Home />
           </Tab>
