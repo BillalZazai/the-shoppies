@@ -6,7 +6,7 @@ export const Movie = (props) => {
 
 
     return (
-        <Card style={{ width: "18rem", margin: "10px" }} className="movie-item">
+        <Card style={{ width: "18rem", margin: "10px" }} className="movie-item" >
             <Card.Img variant="top" src={props.poster} height="380" />
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>

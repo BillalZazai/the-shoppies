@@ -52,6 +52,8 @@ export function Home() {
       </Row>
       <Row className="justify-content-md-center">
         {renderLoading}
+      </Row>
+      <Row className="justify-content-md-center">
         {renderResults()}
       </Row>
     </React.Fragment>
