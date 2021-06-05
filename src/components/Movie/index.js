@@ -6,13 +6,13 @@ export const Movie = (props) => {
 
 
     return (
-        <Card style={{ width: "18rem", margin: "10px" }} className="movie-item" >
+        <Card text="white" style={{ width: "18rem", margin: "10px" }} className="movie-item" >
             <Card.Img variant="top" src={props.poster} height="380" />
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>{`Type: ${props.type}`}</Card.Text>
                 <Card.Text>{props.year}</Card.Text>
-                <Button onClick={props.onClick }>Nominate </Button>
+                <Button variant="outline-warning" onClick={props.onClick }>Nominate </Button>
             </Card.Body>
         </Card>
     );

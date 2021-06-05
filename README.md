@@ -1,5 +1,12 @@
-# The Shoppies
-Shopify Front-End Challenge 🎥 🍿 🎭
+# Shoppies
+### Shopify Front-End Challenge
+
+Movie search using OMDB API
+
+![](public/sshot.png)
+
+
+## [Live Demo](https://the-shoppies-bz.netlify.app/)
 
 ## Available Scripts
 

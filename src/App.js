@@ -1,16 +1,26 @@
 import React from "react";
-import {TabBar} from "./components/TabBar";
-import {NominationsProvider} from "./context/NominationsContext"
+import { TabBar } from "./components/TabBar";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import { NominationsProvider } from "./context/NominationsContext";
 
 function App() {
   return (
     <React.Fragment>
-        <h1 style={{ textAlign: "center" }}>The Shoppies</h1>
-        <h1 style={{ textAlign: "center" }}>🍿 🎬 🎭 🎥</h1>
-        <NominationsProvider>
-          <TabBar/>
-        </NominationsProvider>
+      <Row className="justify-content-md-center">
+        <Card className="text-white header-card">
+          <Card.Img src="./oscar.png" alt="Card image" />
+          <Card.ImgOverlay> 
+            <h1 className="header" style={{ textAlign: "center" }}>Shoppies</h1>
+          </Card.ImgOverlay>
+        </Card>
+
         
+      </Row>
+
+      <NominationsProvider>
+        <TabBar />
+      </NominationsProvider>
     </React.Fragment>
   );
 }

@@ -10,6 +10,19 @@ export const NominationsProvider = (props) => {
         setNominationsState ([])
     } 
 
+    const doesNominationExist = (nomination) => {
+            return nominationsState.some ( (movie)=>{ return ( (movie.imdbID=== nomination.imdbID) && (movie.Year=== nomination.Year) )} )
+    }
+
+    const getNominationInfo = (id) => {
+        return nominationsState.find ( (movie)=> movie.imdbID===id )
+    }
+
+    const removeNominationFromState = (imdbID) => {
+        let newNominations = nominationsState.filter ( (movie)=>{return (movie.imdbID !== imdbID) } )
+        setNominationsState (newNominations)
+    }
+
     const sortNominationsState = () => {
         let sortedMovies = [...nominationsState].sort ((a,b)=> {
             if (a.Title < b.Title) {
@@ -26,17 +39,16 @@ export const NominationsProvider = (props) => {
         setNominationsState (sortedMovies)
     }
 
-    const removeNominationFromState = (title, year) => {
-        let newNominations = nominationsState.filter ( (movie)=>{return (movie.Title !== title && movie.Year !== year) } )
-        setNominationsState (newNominations)
-    }
+    
     return (
         <NominationsContext.Provider value= {{
             nominations: nominationsState,
             setNominations: setNominationsState,
             clearNominations: clearNominationsState,
             sortNominations : sortNominationsState,
-            removeNomination : removeNominationFromState
+            removeNomination : removeNominationFromState,
+            doesNominationExist: doesNominationExist, 
+            getNominationInfo: getNominationInfo
         }}>
             {props.children}
         </NominationsContext.Provider>
